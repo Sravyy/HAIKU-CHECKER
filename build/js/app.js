@@ -16,6 +16,7 @@ var Haiku = exports.Haiku = function () {
 
   //method
 
+
   _createClass(Haiku, [{
     key: "checkType",
     value: function checkType() {
@@ -42,7 +43,7 @@ var Haiku = exports.Haiku = function () {
           }
         }
       });
-      alert(letters);
+      return letters;
     }
   }]);
 
