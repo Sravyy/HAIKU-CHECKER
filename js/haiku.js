@@ -2,22 +2,23 @@ export class Haiku {
   constructor() {
 }
 
-//method
-var splitArray=user.split(" ");
 
-  var vowelArray = ["a","e","i","o","u"];
+//method
+checkType(){
+let splitArray=user.split(" ");
+let vowelArray = ["a","e","i","o","u"];
 let letters = [];
 let pushWord =[];
 
 splitArray.forEach(function(word) {
 
-    var splitWord = word.split("");
+    let splitWord = word.split("");
 
   	splitWord.forEach(function(splitted){
         pushWord.push(splitted);
     })
 
-    });
+    })
 
     pushWord.forEach(function(letter){
 
@@ -30,5 +31,5 @@ splitArray.forEach(function(word) {
      })
      alert(letters);
 
-
-}
+     }
+     }
