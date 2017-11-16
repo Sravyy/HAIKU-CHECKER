@@ -1,72 +1,39 @@
-export class Haiku
+export class Haiku {
 constructor (lineOne, lineTwo, lineThree) {
   this.lineOne = lineOne;
   this.lineTwo = lineTwo;
   this.lineThree = lineThree;
 }
 
-//method
-checkType(){
-let splitArray=user.split(" ");
-let vowelArray = ["a","e","i","o","u"];
-let letters = [];
-let pushWord =[];
+CheckLines() {
+    //Checking if Haiku has three lines
+    let IsHaiku = false;
 
-splitArray.forEach(function(word) {
-
-    let splitWord = word.split("");
-
-  	splitWord.forEach(function(splitted){
-        pushWord.push(splitted);
-    })
-    })
-
-    pushWord.forEach(function(letter){
-
-      for(i=0; i < vowelArray.length; i++) {
-        if(letter == vowelArray[i]){
-
-          letters.push(letter);
-        }
-      }
-     })
-     return letters;
-
-     }
-     }
-
-  function lineOneCheck() {
-  let IsHaiku = false;
-  var syllable = require('syllable');
-  // var count = lineOne.length
-  var lineOneSyllable = syllable(lineOne)
-  if (syllable == 5) {
-    IsHaiku = true;
+    if(this.lineOne !== "" && this.lineTwo !== "" && this.lineThree !== "")
+    {
+      IsHaiku = true;
+    }
+    return IsHaiku;
   }
-  if (lineOne != "") {
-    IsHaiku = true;
-  }
-}
 
-function lineTwoCheck() {
-  let IsHaiku = false;
-  var syllable = require('syllable');
-  // var count = lineTwo.length
-  var lineTwoSyllable = syllable(lineTwo)
-  if (syllable == 7) {
-    IsHaiku = true;
-  }
-  if (lineTwo != "") {
-    IsHaiku = true;
-  }
-}
+  CheckSyllables() {
+    //Checking if Line 1 has 5 syllables, line 2 has 7 and line 3 has 5 syllables
 
-function lineThreeCheck() {
-  let IsHaiku = false;
-  var syllable = require('syllable');
-  // var count = lineThree.length
-  var lineThreeSyllable = syllable(lineThree)
-  if (syllable == 5) {
-    IsHaiku = true;
+    var syllable = require('syllable');
+    let IsHaiku = false;
+    let lineOne = this.lineOne;
+    let lineTwo = this.lineTwo;
+    let lineThree = this.lineThree;
+    let lineOneSyllable = syllable(lineOne);
+    let lineTwoSyllable = syllable(lineTwo);
+    let lineThreeSyllable = syllable(lineThree);
+
+
+    if( lineOneSyllable == 5 && lineTwoSyllable == 7 && lineThreeSyllable == 5)
+    {
+      IsHaiku = true;
+    }
+    return IsHaiku;
   }
+
 }

@@ -32,23 +32,19 @@ $(document).ready(function() {
   $("#formOne").submit(function(event) {
     event.preventDefault();
 
-    const haiku = [];
-
     let lineOne = $("#lineOne").val();
     let lineTwo = $("#lineTwo").val();
     let lineThree = $("#lineThree").val();
 
-    haiku.push ([lineOne, lineTwo, lineThree]);
-  });
+  let userInput = new Haiku(lineOne, lineTwo, lineThree);
+  let resultLine = userInput.CheckLines();
+  let resultSyllables = userInput.CheckSyllables();
 
-  let userInput = new Haiku();
-  let result1 = userInput.lineOneCheck();
-  let result2 = userInput.lineTwoCheck();
-  let result3 = userInput.lineThreeCheck();
+  $("#output").text("Congrats! This is a Haiku.");
 
-  if (result1 = true && result2 = true && result3 = true) {
-    $("#output").text("Congrats! This is a Haiku.");
+  if (resultLine == true && resultSyllables == true ) {
   } else {
     $("#output").text("I am sorry. This is not a proper Haiku. Better luck next time :)");
   }
+  });
 });
